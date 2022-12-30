@@ -13,4 +13,11 @@
 
     <properties> </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.vakaks.food-ordering-system</groupId>
+            <artifactId>order-domain-core</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
