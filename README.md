@@ -9,6 +9,8 @@
   
   - DDD
 
+  - KAFKA
+
 
 
 **Run this command to generate a system module image:**
