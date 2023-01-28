@@ -5,7 +5,7 @@ import com.vakaks.food.ordering.system.domain.valueobject.*;
 import com.vakaks.food.ordering.system.exception.OrderDomainException;
 import com.vakaks.food.ordering.system.valueobject.OrderItemId;
 import com.vakaks.food.ordering.system.valueobject.StreetAddress;
-import com.vakaks.food.ordering.system.valueobject.TranckingId;
+import com.vakaks.food.ordering.system.valueobject.TrackingId;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
@@ -16,14 +16,14 @@ public class Order extends AggregateRoot<OrderId> {
     private final StreetAddress deliveryAddress;
     private final Money price;
     private final List<OrderItem> items;
-    private TranckingId tranckingId;
+    private TrackingId trackingId;
     private OrderStatus orderStatus;
     private List<String> failureMessages;
 
 
     public void initializeOrder(){
         setId(new OrderId(UUID.randomUUID()));
-        tranckingId = new TranckingId(UUID.randomUUID());
+        trackingId = new TrackingId(UUID.randomUUID());
         orderStatus = OrderStatus.PENDING;
         initializeItems();
     }
@@ -42,14 +42,14 @@ public class Order extends AggregateRoot<OrderId> {
                 }).reduce(Money.ZERO, Money::add);
 
         if(!price.equals(orderItemsTotal)){
-            throw new OrderDomainException("Total price " + price.getAmount()
-            + "is not equal to Order Items total: " + orderItemsTotal.getAmount() + " !");
+            throw new OrderDomainException("Total price " + price.amount()
+            + "is not equal to Order Items total: " + orderItemsTotal.amount() + " !");
         }
     }
 
     private void validateItemPrice(OrderItem orderItem) {
         if(!orderItem.isPriceValid()){
-            throw new OrderDomainException("Order item price: " + orderItem.getPrice().getAmount() +
+            throw new OrderDomainException("Order item price: " + orderItem.getPrice().amount() +
                     " is not a valid for product " + orderItem.getProduct().getId().getValue());
         }
     }
@@ -129,7 +129,7 @@ public class Order extends AggregateRoot<OrderId> {
         deliveryAddress = builder.deliveryAddress;
         price = builder.price;
         items = builder.items;
-        tranckingId = builder.tranckingId;
+        trackingId = builder.trackingId;
         orderStatus = builder.orderStatus;
         failureMessages = builder.failureMessages;
     }
@@ -155,8 +155,8 @@ public class Order extends AggregateRoot<OrderId> {
         return items;
     }
 
-    public TranckingId getTranckingId() {
-        return tranckingId;
+    public TrackingId getTranckingId() {
+        return trackingId;
     }
 
     public OrderStatus getOrderStatus() {
@@ -174,7 +174,7 @@ public class Order extends AggregateRoot<OrderId> {
         private StreetAddress deliveryAddress;
         private Money price;
         private List<OrderItem> items;
-        private TranckingId tranckingId;
+        private TrackingId trackingId;
         private OrderStatus orderStatus;
         private List<String> failureMessages;
 
@@ -215,8 +215,8 @@ public class Order extends AggregateRoot<OrderId> {
             return this;
         }
 
-        public Builder tranckingId(TranckingId val) {
-            tranckingId = val;
+        public Builder tranckingId(TrackingId val) {
+            trackingId = val;
             return this;
         }
 

@@ -3,34 +3,7 @@ package com.vakaks.food.ordering.system.valueobject;
 import java.util.Objects;
 import java.util.UUID;
 
-public class StreetAddress {
-    private final UUID id;
-    private final String street;
-    private final String postalCode;
-    private final String city;
-
-    public StreetAddress(UUID id, String street, String postalCode, String city) {
-        this.id = id;
-        this.street = street;
-        this.postalCode = postalCode;
-        this.city = city;
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getStreet() {
-        return street;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public String getCity() {
-        return city;
-    }
+public record StreetAddress(UUID id, String street, String postalCode, String city) {
 
     @Override
     public boolean equals(Object o) {
