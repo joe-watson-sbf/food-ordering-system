@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="887914f0-3ebe-4e46-90bb-7bf49792232b" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/vakaks/food/ordering/system/service/domain/ApplicationDomainEventPublisher.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/vakaks/food/ordering/system/service/domain/OrderCreateHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/vakaks/food/ordering/system/service/domain/OrderCreateCommandHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/vakaks/food/ordering/system/service/domain/OrderCreateCommandHandler.java" afterDir="false" />
+>>>>>>> publish-event-option-1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +73,12 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+<<<<<<< HEAD
     &quot;settings.editor.selected.configurable&quot;: &quot;copyright&quot;,
+=======
+    &quot;settings.editor.selected.configurable&quot;: &quot;build.tools&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;f93de262d203ed6821e22127ef844337&quot;,
+>>>>>>> publish-event-option-1
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -91,6 +102,11 @@
       <workItem from="1673481937141" duration="1854000" />
       <workItem from="1674798866238" duration="661000" />
       <workItem from="1674837621606" duration="182000" />
+      <workItem from="1674878916468" duration="12211000" />
+      <workItem from="1675139524771" duration="1206000" />
+      <workItem from="1676295574029" duration="2601000" />
+      <workItem from="1676572052423" duration="71000" />
+      <workItem from="1676572130682" duration="424000" />
     </task>
     <servers />
   </component>

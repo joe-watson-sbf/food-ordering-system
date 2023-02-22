@@ -11,6 +11,7 @@ import com.vakaks.food.ordering.system.entity.Restaurant;
 import com.vakaks.food.ordering.system.service.domain.dto.create.CreateOrderCommand;
 import com.vakaks.food.ordering.system.service.domain.dto.create.CreateOrderResponse;
 import com.vakaks.food.ordering.system.service.domain.dto.create.OrderAddress;
+import com.vakaks.food.ordering.system.service.domain.dto.track.TrackOrderResponse;
 import com.vakaks.food.ordering.system.valueobject.StreetAddress;
 import org.springframework.stereotype.Component;
 
@@ -61,12 +62,13 @@ public class OrderDataMapper {
 
 
 
-
-
-
-
-
-
+    public TrackOrderResponse orderToTrackOrderResponse(Order order){
+        return TrackOrderResponse.builder()
+                .orderTrackingId(order.getTranckingId().getValue())
+                .orderStatus(order.getOrderStatus())
+                .failureMessages(order.getFailureMessages())
+                .build();
+    }
 
 
     private List<OrderItem> orderItemsToOrderItemsEntities(
